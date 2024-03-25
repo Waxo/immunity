@@ -30,10 +30,12 @@ const updatePopulation = async (pop) => {
 
 // CONFIG
 const _configToEnv = (cfg) => {
-  process.env.transmissionFactor = cfg.transmissionFactor;
-  process.env.popSize = cfg.popSize;
-  process.env.initialPercentHealthy = cfg.initialPercentHealthy;
-  process.env.recoveryTime = cfg.recoveryTime;
+  if (cfg) {
+    process.env.transmissionFactor = cfg.transmissionFactor;
+    process.env.popSize = cfg.popSize;
+    process.env.initialPercentHealthy = cfg.initialPercentHealthy;
+    process.env.recoveryTime = cfg.recoveryTime;
+  }
 };
 
 const loadConfig = async () => {

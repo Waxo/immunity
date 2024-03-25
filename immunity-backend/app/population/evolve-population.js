@@ -7,9 +7,10 @@ const _getIllPercentage = R.converge(R.divide, [
   R.length,
 ]);
 
-const _transmissionCompute = (pop) => () =>
-  _getIllPercentage(pop) * Math.random() >
+const _transmissionCompute = (pop) => () =>  _getIllPercentage(pop) * Math.random() <
   Number(process.env.transmissionFactor);
+
+
 
 const _isIll = R.propEq(true, "isIll");
 

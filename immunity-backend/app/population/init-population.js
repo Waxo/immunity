@@ -13,7 +13,7 @@ const initPopulation = async ({
   popSize = 50,
   initialPercentHealthy = 0.9,
   recoveryTime = 3,
-  transmissionFactor = 1,
+  transmissionFactor = 0.05,
 } = {}) => {
   const pop = _initializePop(initialPercentHealthy)(popSize);
   await saveConfig({

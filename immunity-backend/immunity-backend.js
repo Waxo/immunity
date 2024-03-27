@@ -1,5 +1,6 @@
 import Koa from "koa";
 import Router from "@koa/router";
+import cors from "@koa/cors";
 import logger from "koa-logger";
 import { initPopulation } from "./app/population/init-population.js";
 import { loadConfig } from "./app/db.js";
@@ -11,6 +12,7 @@ const app = new Koa();
 const router = new Router();
 
 app.use(logger());
+app.use(cors());
 
 router.get("/", (ctx) => {
   ctx.type = "html";
